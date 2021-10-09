@@ -1,4 +1,5 @@
 import React from 'react';
+import ClickablePicture from './ClickablePicture';
 import './App.css';
 
 class App extends React.Component {
@@ -37,6 +38,10 @@ class App extends React.Component {
         <h1>{this.state.message}</h1>
         <h3>{this.state.count}</h3>
         <button onClick={this.handleIncrement}>Increment Count</button>
+        <ClickablePicture
+          img="/img/persons/maxence.png"
+          imgClicked="/img/persons/maxence-glasses.png"
+        />
       </div>
     );
   }
