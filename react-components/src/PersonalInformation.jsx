@@ -5,7 +5,9 @@ const PersonalInformation = (props) => {
       <h1>{props.name}</h1>
       <strong>{props.location}</strong>
       <br />
-      <em>Favorite color is {props.color}</em>
+      <em style={{ backgroundColor: props.color }}>
+        Favorite color is {props.color}
+      </em>
       <br />
       <p>This person {props.vegan ? 'is' : 'is not'} vegan.</p>
       <br />
@@ -15,5 +17,13 @@ const PersonalInformation = (props) => {
     </div>
   );
 };
+
+// green
+// #fac356
+// #fac35655
+// rgb(200, 255, 100)
+// rgba(200, 255, 100, 0.5)
+// hsl(220, 95%, 70%)
+// hsla(220, 95%, 70%, 0.5)
 
 export default PersonalInformation;
