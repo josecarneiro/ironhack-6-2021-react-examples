@@ -1,11 +1,29 @@
 import PersonalInformation from './PersonalInformation';
 import PetInformation from './PetInformation';
-import './App.scss';
+
+const Card = (props) => {
+  return (
+    <div
+      style={{ boxShadow: '0 0.125em 1em -0.5em #000000dd', padding: '1em' }}
+    >
+      {props.children}
+    </div>
+  );
+};
 
 function App() {
   return (
     <div className="App">
+      <Card>
+        <h1>Ciao Mondo</h1>
+        <img src="logo192.png" alt="Logo" />
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
+          tempore?
+        </p>
+      </Card>
       <PetInformation name="Whiskers" species="cat" />
+
       <PersonalInformation
         name="José Carneiro"
         location="Restauradores, Lisbon, Portugal"

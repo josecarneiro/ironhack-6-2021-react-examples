@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link, Redirect } from 'react-router-dom';
 
 const BookView = (props) => {
   console.log(props.match.params.id);
@@ -44,14 +44,22 @@ function App() {
           <Link to="/person/jose">Person</Link>
         </div>
         <Switch>
+          <Redirect path="/person/caroline" to="/person/sophie" />
+          {/* With this solution, the BookView component will be rendered
+          with some routing specific props (match, history, location, staticContext) */}
           <Route path="/book/:id" component={BookView} />
-          {/* <Route path="/person/:name" component={PersonView} /> */}
+          {/* What if besides providing PersonView with routing props
+          we wanted to pass aditional props (eg. age)? */}
           <Route
             path="/person/:name"
-            component={(props) => <PersonView age={age} {...props} />}
+            render={(props) => <PersonView age={age} {...props} />}
+            exact
           />
-          <Route path="/">
+          <Route path="/" exact>
             <SlashView />
+          </Route>
+          <Route>
+            <h1>There's nothing to see here.</h1>
           </Route>
         </Switch>
       </BrowserRouter>

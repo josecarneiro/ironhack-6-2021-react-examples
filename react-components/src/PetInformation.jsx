@@ -29,4 +29,12 @@ class PetInformation extends React.Component {
   }
 }
 
+// class SpecialPetInformation extends PetInformation {}
+
+// class SpecialPetInformation extends React.Component {
+//   render() {
+//     return <PetInformation />;
+//   }
+// }
+
 export default PetInformation;
